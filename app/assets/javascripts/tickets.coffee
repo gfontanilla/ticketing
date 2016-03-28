@@ -6,7 +6,7 @@ jQuery ->
     source: $('#ticket_assignee_id').data('autocomplete-source')
 
   $("tr[data-link]").click ->
-    window.location = $(this).data('link')
+    window.location = $(this).data("link")
 
   $('tbody tr').hover (->
     $(this).css 'cursor', 'pointer'
