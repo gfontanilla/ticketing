@@ -2,8 +2,18 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 jQuery ->
-  $('#ticket_assignee_id').autocomplete
-    source: $('#ticket_assignee_id').data('autocomplete-source')
+  $("#ticket_assignee").autocomplete
+    source: $("#ticket_assignee").data("autocomplete-source")
+    change: (event, ui) ->
+      $("#ticket_assignee").val ui.item.label
+      $("#ticket_assignee_id").val ui.item.value
+      false
+    focus: (event, ui) ->
+      $("#ticket_assignee").val ui.item.label
+      false
+    select: (event, ui) ->
+      $("#ticket_assignee").val ui.item.label
+      false
 
   $("tr[data-link]").click ->
     window.location = $(this).data("link")
