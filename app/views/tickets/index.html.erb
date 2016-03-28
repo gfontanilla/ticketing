@@ -15,7 +15,7 @@
       <td><%= t.id %></td>
       <td><%= t.reporter.try(:email) || "-" %></td>
       <td><%= t.subject %></td>
-      <td><%= t.assignee.try(:email) || "-"  %></td>
+      <td><%= t.assignee.try(:email) || "-" %></td>
       <td><%= t.created_at %></td>
     </tr>
   </tbody>
