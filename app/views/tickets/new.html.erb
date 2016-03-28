@@ -3,7 +3,8 @@
 
   <div class="form-group col-md-4">
     <%= f.label :assignee_id %>:
-    <%= f.text_field :assignee_id, as: :search, class: 'form-control', data: { autocomplete_source: User.pluck(:email) } %>
+    <%= f.hidden_field :assignee_id, as: :hidden, :id => "ticket_assignee_id" %>
+    <%= f.text_field :assignee, :id => "ticket_assignee", as: :search, class: 'form-control', data: { autocomplete_source: User.pluck(:id, :email).collect{ |usr| {"value" => usr[0], "label" => usr[1] } } } %>
   </div>
 
   <div class="form-group col-md-4">

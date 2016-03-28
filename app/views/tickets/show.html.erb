@@ -26,8 +26,7 @@
       <%= fields_for @ticket do |tf| %>
         <div class="form-group col-md-2">
           <%= tf.label :status_id %>
-          <%= tf.select(:status_id, options_for_select(@ticket.statuses.map.with_index{|i, v| [i, v]}), {:value => @ticket.status_id, class: "form-control"})
-            %>
+	  <%= tf.select :status_id, options_for_select(@ticket.statuses.map.with_index{|i, v| [i, v]}, [@ticket.statuses[@ticket.status_id], @ticket.status_id]), {class: "form-control"} %>
         </div>
       <% end %>
     <% end %>
